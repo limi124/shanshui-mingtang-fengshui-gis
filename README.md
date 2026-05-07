@@ -1,4 +1,43 @@
-# 风水地理智能分析 WebGIS 系统
+# 山水明堂风水地理信息系统
+
+**Shanshui Mingtang Feng Shui GIS**  
+**AI-powered Feng Shui Geospatial Intelligence System**
+
+一个结合 WebGIS、DEM 地形分析、水系空间关系、Cesium 三维视图和 AI 解读的传统环境格局智能评估系统。用户可以在地图上圈画研究区，系统自动汇总海拔、坡度、坡向、地形起伏、河流水系关系等空间指标，并从“靠山、明堂、藏风、得水、纳气、聚财”等传统风水文化视角生成可视化报告。
+
+This project is an AI-assisted WebGIS platform for traditional landscape pattern interpretation. Users can draw a study area on the map, summarize terrain and river metrics, visualize the site in 2D/3D, and generate a Feng Shui cultural interpretation based on structured GIS analysis results.
+
+> 本项目仅用于传统文化研究、环境格局分析与娱乐参考，不构成真实财运预测、投资建议、购房建议、商业选址建议或其他现实决策依据。
+>
+> This project is for traditional culture research, spatial pattern visualization and entertainment reference only. It does not provide real fortune prediction, investment advice, property advice or business site-selection advice.
+
+## Highlights
+
+- Draw a polygon, rectangle or circle fence directly on a WebGIS map.
+- Analyze elevation, slope, aspect, terrain relief and roughness from DEM data.
+- Evaluate river/water relation from local vector water datasets.
+- Visualize the site with Cesium 3D scene and symbolic spatial markers.
+- Generate Feng Shui cultural reports with DeepSeek / OpenAI-compatible LLMs.
+- Keep sensitive fence coordinates local; AI receives structured metrics, not raw GeoJSON.
+- Support mock mode for quick demos and real-data mode for local geospatial analysis.
+
+## 支持项目与定制分析
+
+如果这个开源项目对你有帮助，欢迎支持作者继续维护和扩展。也欢迎交流定制化 GIS 分析、三维地形可视化、AI 报告生成、私有化部署和数据接入等需求。
+
+前端页面右上角提供 `支持作者 / Support` 弹窗，包含赞赏码：
+
+```text
+frontend/public/assets/support.jpg
+```
+
+可定制方向包括：
+
+- DEM 高程、坡度、坡向、地形起伏与建设适宜性分析。
+- 河流、水系、道路、地块边界等矢量数据接入。
+- Cesium 三维地形场景、自有 DEM 地形瓦片和 3D Tiles。
+- DeepSeek / OpenAI-compatible AI 风水文化报告生成。
+- 私有化部署、云服务器、域名、Nginx 和 Docker 配置。
 
 ## 1. 项目简介
 

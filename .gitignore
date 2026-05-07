@@ -47,3 +47,6 @@ backend/data/
 Thumbs.db
 .idea/
 .vscode/
+
+# Local original media copied into public assets when needed
+f63f4d1f26096813af1c48b4024a9e6b.jpg
