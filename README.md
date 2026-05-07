@@ -1,51 +1,57 @@
-# 声明：本项目纯属传统民俗文化娱乐参考；分析精度取决于 Cesium 上传的 DEM 数据集、河流水系数据和本地 GIS 数据质量。欢迎支持项目；有问题可提 Issue，或联系邮箱：lm1248571@gmail.com。
+> **Statement:** This project is for traditional folk culture entertainment and WebGIS practice only. Analysis quality depends on the DEM dataset uploaded to Cesium, river/water data, and local GIS data quality. Support is welcome. For questions, please open an Issue or contact: `lm1248571@gmail.com`.
 
-# 山水明堂风水地理信息系统
-
-**Shanshui Mingtang Feng Shui GIS**
+# Shanshui Mingtang Feng Shui GIS
 
 ![WebGIS](https://img.shields.io/badge/WebGIS-OpenLayers-0f766e)
 ![3D](https://img.shields.io/badge/3D-CesiumJS-b8860b)
 ![Backend](https://img.shields.io/badge/Backend-FastAPI-059669)
 ![AI](https://img.shields.io/badge/AI-DeepSeek-2563eb)
-![Culture](https://img.shields.io/badge/Use-Traditional%20Culture%20Entertainment-7c3aed)
+![Culture](https://img.shields.io/badge/Use-Folk%20Culture%20Entertainment-7c3aed)
 
-**Language:** 中文 | [English](#english)
+**Language:** English | [中文](#中文说明)
 
-一个结合 **WebGIS、三维地形、DEM 高程分析、水系空间关系分析和 AI 解读** 的传统环境格局智能评估系统。
+Shanshui Mingtang Feng Shui GIS is an AI-assisted WebGIS platform for traditional landscape pattern interpretation.
 
-用户可以在地图上圈画一个研究区，系统会自动汇总该区域的海拔、高程起伏、坡度、坡向、地形粗糙度、河流水系关系等空间指标，并从传统风水文化中的“靠山、明堂、藏风、得水、纳气、聚财”等视角生成可视化分析结果。
+Users can draw a study area on the map, summarize elevation, slope, aspect, terrain relief, roughness, and river-water relations, then generate a cultural Feng Shui interpretation based on structured GIS analysis results.
 
-> 注意：本项目不是算命工具，不做真实财运预测，不构成买房、投资、商业选址、医疗、法律、婚姻或人生决策建议。所有风水、聚财、吉凶相关内容均为传统民俗文化娱乐参考。
+The system visualizes traditional concepts such as **mountain backing**, **Mingtang openness**, **wind enclosure**, **water relation**, **Qi intake**, and **wealth symbolism** through GIS indicators, 2D maps, Cesium 3D scenes, and AI-generated reports.
 
-## 为什么做这个项目
+AI does not make unsupported predictions. It interprets backend-calculated DEM, slope, aspect, river relation, and scoring results. Raw fence GeoJSON coordinates are not sent to the LLM by default.
 
-传统风水里经常提到“山、水、势、向、局”，但这些概念如果只靠文字描述，很难直观看到。
+## Support This Project
 
-这个项目尝试把它们转成可视化和可计算的空间指标：
+If this open-source project is useful or inspiring to you, support is warmly appreciated. Custom GIS analysis, Cesium 3D visualization, AI report generation, private deployment, and data integration are also welcome.
 
-- “靠山”对应后方地势、相对高差和三维地形背景。
-- “明堂”对应前方开阔度、场地舒展度和视域关系。
-- “得水”对应河流、水体距离、相交关系和排水风险。
-- “藏风”对应左右围合、边界感和风环境象意。
-- “纳气、聚财”作为传统民俗文化解释，由 AI 基于本地 GIS 计算结果生成。
+<p>
+  <img src="frontend/public/assets/support.jpg" alt="Support QR code" width="220" />
+</p>
 
-AI 不直接凭空判断，而是基于后端计算得到的 DEM、水系、坡向、坡度和评分结果生成报告。
+Contact: `lm1248571@gmail.com`
 
-## 功能特点
+## Why This Project
 
-- OpenLayers 二维地图展示。
-- Polygon / Rectangle / Circle 电子围栏绘制。
-- DEM 高程、坡度、坡向、地形起伏和粗糙度分析。
-- 河流水系关系分析。
-- 靠山、明堂、藏风、得水、采光、地形稳定等规则评分。
-- Cesium 三维地形视角展示。
-- DeepSeek / OpenAI-compatible AI 风水文化解读。
-- 聚财格局文化参考报告。
-- Mock 模式和真实数据模式切换。
-- 敏感围栏坐标默认不发送给 AI，只发送结构化指标。
+Traditional Feng Shui often talks about mountain, water, direction, openness, enclosure, and spatial momentum. These ideas are difficult to inspect with text alone.
 
-## 技术栈
+This project turns them into visible and computable geospatial indicators:
+
+- **Mountain backing:** rear terrain, elevation contrast, and 3D terrain context.
+- **Mingtang openness:** front-side openness, visual expansion, and site usability.
+- **Water relation:** river/water-body distance, intersection, direction, and drainage risk.
+- **Wind enclosure:** left-right boundary, terrain enclosure, and symbolic shelter.
+- **Qi and wealth symbolism:** cultural interpretation generated from local GIS metrics.
+
+## Features
+
+- Draw polygon, rectangle, or circle fences on a WebGIS map.
+- Analyze DEM elevation, slope, aspect, terrain relief, and roughness.
+- Evaluate river and water-body relations from local vector data.
+- Score mountain backing, Mingtang openness, enclosure, water relation, lighting, and terrain stability.
+- Visualize site patterns in Cesium 3D.
+- Generate cultural reports with DeepSeek or other OpenAI-compatible LLMs.
+- Support mock mode for quick demos and real-data mode for local geospatial analysis.
+- Keep API keys and private geospatial data outside the public repository.
+
+## Tech Stack
 
 **Frontend**
 
@@ -68,9 +74,9 @@ AI 不直接凭空判断，而是基于后端计算得到的 DEM、水系、坡�
 - Pydantic
 - Uvicorn
 
-## 快速启动
+## Quick Start
 
-### 1. 安装前端依赖
+### Frontend
 
 ```bash
 cd frontend
@@ -79,13 +85,13 @@ copy .env.example .env
 npm run dev
 ```
 
-默认前端地址：
+Frontend URL:
 
 ```text
 http://127.0.0.1:5173
 ```
 
-### 2. 安装后端依赖
+### Backend
 
 ```bash
 cd backend
@@ -96,23 +102,21 @@ copy .env.example .env
 uvicorn main:app --reload --host 127.0.0.1 --port 8000
 ```
 
-后端健康检查：
+Health check:
 
 ```text
 http://127.0.0.1:8000/api/health
 ```
 
-### 3. 一键启动
-
-Windows 用户可以直接运行：
+### One-click Startup on Windows
 
 ```bash
 start-dev.bat
 ```
 
-## 配置说明
+## Configuration
 
-### 前端 `.env`
+### Frontend `.env`
 
 ```env
 VITE_API_BASE_URL=http://127.0.0.1:8000
@@ -123,7 +127,7 @@ VITE_VECTOR_TILE_URL=
 VITE_USE_MOCK_DATA=false
 ```
 
-### 后端 `.env`
+### Backend `.env`
 
 ```env
 APP_NAME=Fengshui GIS
@@ -138,32 +142,26 @@ LLM_BASE_URL=
 LLM_MODEL=
 ```
 
-## 接入真实数据
+## Real Data Integration
 
-### DEM 数据
-
-将 GeoTIFF DEM 放入本地数据目录，并在 `backend/.env` 配置：
+### DEM
 
 ```env
 USE_MOCK_DATA=false
 DEM_PATH=./data/dem/your_dem.tif
 ```
 
-三维地形精度取决于你上传到 Cesium ion 或自有地形服务的 DEM 数据集质量、分辨率和切片方式。
+3D terrain accuracy depends on the DEM quality, resolution, vertical reference, and Cesium terrain tiling process.
 
-### 水系数据
-
-可使用 GeoJSON 或 Shapefile 格式的河流、水体数据：
+### River / Water Data
 
 ```env
 VECTOR_WATER_PATH=./data/vector/water.geojson
 ```
 
-后端会根据电子围栏计算水系关系，例如是否相交、最近距离、方位和得水评分。
+The backend can evaluate intersection, nearest distance, direction, and water-relation score from local vector data.
 
-### AI 解读
-
-支持 DeepSeek 或其他 OpenAI-compatible API：
+### AI Interpretation
 
 ```env
 LLM_ENABLED=true
@@ -172,72 +170,62 @@ LLM_MODEL=deepseek-v4-flash
 LLM_API_KEY=your_api_key
 ```
 
-安全说明：后端只向 AI 发送面积、坡度、坡向、水系关系、评分等结构化指标，不发送原始电子围栏 GeoJSON 坐标。
+Security note: keep `.env`, DEM files, Shapefiles, local datasets, build output, and API keys out of the public repository.
 
-## 支持项目与定制分析
+## Disclaimer
 
-如果这个开源项目对你有帮助，欢迎支持作者继续维护和扩展。
-
-前端页面右上角提供 `支持作者 / Support` 弹窗，包含赞赏码：
-
-```text
-frontend/public/assets/support.jpg
-```
-
-也欢迎交流定制分析和开发需求：
-
-- DEM 高程、坡度、坡向、地形起伏分析。
-- 河流、水系、道路、地块边界等矢量数据接入。
-- Cesium 三维地形、自有 DEM 地形瓦片和 3D Tiles。
-- DeepSeek / OpenAI-compatible AI 报告生成。
-- 私有化部署、服务器、域名、Nginx 和 Docker 配置。
-
-有问题可以：
-
-- 提交 GitHub Issue。
-- 发送邮件：`lm1248571@gmail.com`。
-
-## 项目结构
-
-```text
-backend/                 FastAPI backend
-frontend/                Vue + Vite frontend
-docs/                    Technical and deployment docs
-scripts/                 One-click startup scripts
-docker-compose.yml       Docker Compose placeholder
-start-dev.bat            One-click local startup
-```
-
-## 免责声明
-
-本系统基于地理空间数据、DEM 地形分析和传统风水文化解释生成报告，仅用于环境格局分析、传统文化研究与娱乐参考，不构成现实人生、投资、医疗、婚姻、法律、商业选址等决策建议。
+This project is for traditional culture research, landscape pattern visualization, WebGIS practice, and entertainment reference only. It does not provide real fortune prediction, investment advice, property advice, medical advice, legal advice, or business site-selection advice.
 
 ---
 
-<a id="english"></a>
+<a id="中文说明"></a>
 
-# Shanshui Mingtang Feng Shui GIS
+> **声明：** 本项目纯属传统民俗文化娱乐参考与 WebGIS 技术实践；分析精度取决于 Cesium 上传的 DEM 数据集、河流水系数据和本地 GIS 数据质量。欢迎支持项目；有问题可以提 Issue，或联系邮箱：`lm1248571@gmail.com`。
 
-**Statement: This project is for traditional folk culture entertainment only. The analysis quality depends on the Cesium-uploaded DEM dataset, river data and local GIS data quality. Support is welcome. For questions, please open an Issue or contact: lm1248571@gmail.com.**
+# 山水明堂风水地理信息系统
 
-**Language:** [中文](#山水明堂风水地理信息系统) | English
+**语言：** [English](#shanshui-mingtang-feng-shui-gis) | 中文
 
-Shanshui Mingtang Feng Shui GIS is an AI-assisted WebGIS platform for traditional landscape pattern interpretation.
+山水明堂风水地理信息系统是一个结合 **WebGIS、三维地形、DEM 高程分析、水系空间关系分析和 AI 解读** 的传统环境格局智能评估系统。
 
-Users can draw a study area on the map, summarize elevation, slope, aspect, terrain relief, roughness and river-water relations, then generate a cultural Feng Shui interpretation based on structured GIS analysis results.
+用户可以在地图上圈画研究区，系统自动汇总海拔、高程起伏、坡度、坡向、地形粗糙度、河流水系关系等空间指标，并从传统风水文化中的“靠山、明堂、藏风、得水、纳气、聚财”等视角生成可视化分析结果。
 
-This project focuses on visualizing traditional concepts such as mountain backing, Mingtang openness, wind enclosure, water relation, Qi intake and wealth symbolism. It does not provide real fortune prediction or decision-making advice.
+AI 不直接凭空判断，而是基于后端计算得到的 DEM、水系、坡向、坡度和评分结果生成报告。默认情况下，系统不会把原始电子围栏 GeoJSON 坐标发送给大语言模型。
 
-## Core Features
+## 支持项目
 
-- Draw polygon, rectangle or circle fences on a WebGIS map.
-- Analyze DEM elevation, slope, aspect, terrain relief and roughness.
-- Evaluate river and water-body relations from local vector data.
-- Visualize symbolic terrain patterns in Cesium 3D.
-- Generate cultural reports with DeepSeek or OpenAI-compatible LLMs.
-- Keep sensitive fence coordinates local by sending only structured metrics to AI.
+如果这个开源项目对你有帮助，欢迎赞赏支持。也欢迎交流定制化 GIS 分析、三维地形可视化、AI 报告生成、私有化部署和数据接入等需求。
 
-## Quick Start
+<p>
+  <img src="frontend/public/assets/support.jpg" alt="赞赏码" width="220" />
+</p>
+
+联系邮箱：`lm1248571@gmail.com`
+
+## 为什么做这个项目
+
+传统风水里经常提到“山、水、势、向、局”，但这些概念如果只靠文字描述，很难直观看到。
+
+这个项目尝试把它们转成可视化和可计算的空间指标：
+
+- **靠山：** 后方地势、相对高差和三维地形背景。
+- **明堂：** 前方开阔度、场地舒展度和视域关系。
+- **得水：** 河流、水体距离、相交关系和排水风险。
+- **藏风：** 左右围合、边界感和风环境象意。
+- **纳气、聚财：** 基于本地 GIS 指标生成的传统民俗文化解释。
+
+## 功能特点
+
+- OpenLayers 二维地图展示。
+- Polygon / Rectangle / Circle 电子围栏绘制。
+- DEM 高程、坡度、坡向、地形起伏和粗糙度分析。
+- 河流水系关系分析。
+- 靠山、明堂、藏风、得水、采光、地形稳定等规则评分。
+- Cesium 三维地形视角展示。
+- DeepSeek / OpenAI-compatible AI 风水文化解读。
+- Mock 模式和真实数据模式切换。
+
+## 快速启动
 
 ```bash
 cd frontend
@@ -255,24 +243,36 @@ copy .env.example .env
 uvicorn main:app --reload --host 127.0.0.1 --port 8000
 ```
 
-Or run:
+或直接运行：
 
 ```bash
 start-dev.bat
 ```
 
-## Support and Custom Work
+## 配置真实数据
 
-If this project is useful or inspiring, support is welcome. The frontend includes a `Support` modal with the donation QR code at:
+DEM：
 
-```text
-frontend/public/assets/support.jpg
+```env
+USE_MOCK_DATA=false
+DEM_PATH=./data/dem/your_dem.tif
 ```
 
-Custom GIS analysis, Cesium 3D scenes, AI report generation, private deployment and data integration are welcome.
+水系：
 
-Contact: `lm1248571@gmail.com`
+```env
+VECTOR_WATER_PATH=./data/vector/water.geojson
+```
 
-## Disclaimer
+AI：
 
-This project is for traditional culture research, landscape pattern visualization and entertainment reference only. It does not provide real fortune prediction, investment advice, property advice, medical advice, legal advice or business site-selection advice.
+```env
+LLM_ENABLED=true
+LLM_BASE_URL=https://api.deepseek.com
+LLM_MODEL=deepseek-v4-flash
+LLM_API_KEY=your_api_key
+```
+
+## 免责声明
+
+本系统基于地理空间数据、DEM 地形分析和传统风水文化解释生成报告，仅用于环境格局分析、传统文化研究、WebGIS 技术实践与娱乐参考，不构成现实人生、投资、医疗、婚姻、法律、商业选址等决策建议。
