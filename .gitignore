@@ -1,0 +1,49 @@
+# Local secrets
+.env
+.env.*
+!.env.example
+frontend/.env
+backend/.env
+
+# Dependencies
+node_modules/
+frontend/node_modules/
+backend/.venv/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Build outputs with baked frontend env values
+dist/
+frontend/dist/
+
+# Logs and local runtime artifacts
+*.log
+backend/*-err.log
+backend/*-out.log
+backend/tmp-*.log
+.pytest_cache/
+.playwright-cli/
+frontend/.playwright-cli/
+
+# Local geospatial/private data
+data/
+backend/data/
+*.tif
+*.tiff
+*.shp
+*.shx
+*.dbf
+*.prj
+*.sbn
+*.sbx
+*.cpg
+*.aux.xml
+*.geojson
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
